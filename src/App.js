@@ -1,9 +1,22 @@
 import React from 'react';
-
+import {combineReducers, createStore} from 'redux';
+import {Provider} from 'react-redux';
+import {additionalPrice, car} from './state/reducers'
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
+
+const monsterReducer = combineReducers({
+  aditPrc : additionalPrice,
+  car :  car
+});
+
+const store = createStore(monsterReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  )
+
+
 
 const App = () => {
   const state = {
@@ -32,6 +45,7 @@ const App = () => {
   };
 
   return (
+    <Provider store={store}>
     <div className="boxes">
       <div className="box">
         <Header car={state.car} />
@@ -42,6 +56,7 @@ const App = () => {
         <Total car={state.car} additionalPrice={state.additionalPrice} />
       </div>
     </div>
+    </Provider>
   );
 };
 

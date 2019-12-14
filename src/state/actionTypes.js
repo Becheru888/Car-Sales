@@ -1,4 +1,7 @@
 //STEP 1 
 
+export const ADDITIONAL_PRICE = 'ADDITIONAL_PRICE';
+export const CAR = 'CAR';
 export const ADD_FEATURE = 'ADD_FEATURE';
 export const REMOVE_FEATURE = 'REMOVE_FEATURE';
+export const ADDITIONAL_FEATURES = 'ADDITIONAL_FEATURES';
