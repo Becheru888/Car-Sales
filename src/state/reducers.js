@@ -2,6 +2,10 @@ import * as types from "./actionTypes";
 
 // Step 3
 
+
+
+// CAR STATE ------------------------
+
 const initialCar = {
   price: 26395,
   name: "2019 Ford Mustang",
@@ -9,12 +13,16 @@ const initialCar = {
     "https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg"
 };
 
+
 export function car(carState = initialCar, action) {
   switch (action.type) {
     default:
       return carState;
   }
 }
+
+
+//FEATURES STATE -----------------------
 
 const additionalFeatures = [
   { id: 1, name: "V-6 engine", price: 1500 },
@@ -30,6 +38,9 @@ export function features(featuresState = additionalFeatures, action) {
   }
 }
 
+
+//ADDED FEATURES STATE -------------------------------
+
 const initial = [];
 export function addedFeatures(addedFeaturesState = initial, action) {
   switch (action.type) {
@@ -39,6 +50,9 @@ export function addedFeatures(addedFeaturesState = initial, action) {
       return addedFeaturesState;
   }
 }
+
+
+// TOTAL PRICE --------------------------------
 
 const initial_addtitional_price = 0;
 export function additionalPrice(

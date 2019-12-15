@@ -7,7 +7,6 @@ export function addFeature(feature) {
   };
 }
 
-
 export function additionalPrice(extraMoney){
     console.log(extraMoney)
     return {
