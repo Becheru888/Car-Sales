@@ -46,6 +46,9 @@ export function additionalPrice(
   action
 ) {
   switch (action.type) {
+    case types.CALCULATE_TOTAL:
+      debugger
+      return additional + action.payload  
     default:
       return additional;
   }

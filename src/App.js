@@ -8,7 +8,7 @@ import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
 const monsterReducer = combineReducers({
-  aditPrc: additionalPrice,
+  additionalPrice: additionalPrice,
   car: car,
   features: features,
   addedFeatures: addedFeatures

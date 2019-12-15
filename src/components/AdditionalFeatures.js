@@ -1,16 +1,21 @@
-import React from 'react';
-import AdditionalFeature from './AdditionalFeature';
-import {connect} from 'react-redux';
-import {addFeature} from '../state/actionCreators'
+import React from "react";
+import AdditionalFeature from "./AdditionalFeature";
+import { connect } from "react-redux";
+import { addFeature, additionalPrice } from "../state/actionCreators";
 
-const AdditionalFeatures = ({features, addFeature}) => {
+const AdditionalFeatures = ({ features, addFeature, additionalPrice }) => {
   return (
     <div className="content">
       <h4>Additional Features</h4>
       {features.length ? (
         <ol type="1">
           {features.map(item => (
-            <AdditionalFeature key={item.id} feature={item} add={addFeature}/>
+            <AdditionalFeature
+              key={item.id}
+              feature={item}
+              add={addFeature}
+              incresePrice={additionalPrice}
+            />
           ))}
         </ol>
       ) : (
@@ -20,13 +25,12 @@ const AdditionalFeatures = ({features, addFeature}) => {
   );
 };
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
-    features : state.features
-  }
+    features: state.features
+  };
 }
 
-export default connect(
-  mapStateToProps,
-  {addFeature}
-)(AdditionalFeatures);
+export default connect(mapStateToProps, { addFeature, additionalPrice })(
+  AdditionalFeatures
+);
